@@ -57,6 +57,8 @@ p {
 }
 
 ul {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
@@ -109,9 +111,32 @@ address {
 
 .menu-link:hover {
     color: var(--color-brand-light);
-    /* text-decoration: underline; */
     text-decoration: none;
-    font-weight: 600;
+}
+
+/* header */
+.headed-container {
+    display: flex;
+    align-items: center;
+    /*щоб елем не розтягувались*/
+    gap: 40px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    /*все вільне місце зайняте навігацією*/
+    gap: 40px;
+    /*відстань між лого і меню*/
+}
+
+.header-menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 64px;
+    /*відстань між елем*/
 }
 
 /*hero section*/
@@ -131,15 +156,23 @@ address {
     color: var(--color-brand-light);
 }
 
-/*advantades section*/
-.advantages-list {
-    color: var(--color-primary-light);
+/*advantages section*/
+
+.advantages-section {
+    padding: 16px;
     background-color: var(--color-brand-light);
+}
+
+.advantages-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .advantages-item {
     font-size: 20px;
     font-weight: 300;
+    color: var(--color-primary-light);
 }
 
 /*section*/
@@ -155,8 +188,18 @@ address {
 
 /*tradition*/
 
-.tradition-section {
+.traditions-container {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.traditions-section {
     padding-top: 96px;
+}
+
+.traditions-content {
+    max-width: 710px;
 }
 
 .traditions-title {
@@ -165,11 +208,16 @@ address {
 
 .tradition-text .brand {
     color: var(--color-brand-light);
+    font-weight: 600;
 }
 
 .tradition-text .brand-uppercase {
     text-transform: uppercase;
     color: var(--color-brand-light);
+}
+
+.tradition-text-limited {
+    max-width: 340px;
 }
 
 /*chef*/
@@ -187,6 +235,22 @@ address {
 
 .formats-title {
     margin-bottom: 80px;
+}
+
+.formats-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.format-item {
+    flex-basis: calc ((100% - 40px) / 3);
+}
+
+.format-card {
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid lightgray; /*remuve*/
 }
 
 .format-title {
