@@ -31,7 +31,8 @@
     --color-brand-dark: #465929;
     --color-primary-light: #FAF4EA;
     --color-primary-dark: #31261A;
-
+    --color-secondary-light: #CFCFBC;
+    --color-secondary-dark: #A18268;
 }
 
 /*base*/
@@ -42,6 +43,7 @@
 
 body {
     color: var(--color-primary-dark);
+    background-color: var(--color-primary-light);
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -142,6 +144,13 @@ address {
 /*hero section*/
 .hero-section {
     padding: 272px 0;
+    background-image: url('../images/hero-section-background.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    /*щоб не різало зверху*/
+    background-size: cover;
+    /* background-attachment: fixed; */
+
 }
 
 .hero-title {
@@ -186,6 +195,10 @@ address {
     line-height: 1.3;
 }
 
+.section-title.centered {
+    text-align: center;
+}
+
 /*tradition*/
 
 .traditions-container {
@@ -222,13 +235,28 @@ address {
 
 /*chef*/
 .chefs-title {
-    margin-bottom: 80px;
+    max-width: 520px;
+    margin: 0 auto 80px;
+}
+
+.chefs-title::before,
+.chefs-title::after {
+    display: block;
+    width: 352px;
+    height: 2px;
+    background: var(--color-secondary-light);
+    content: '';
 }
 
 .chef-title {
     margin-bottom: 16px;
     font-size: 40px;
     font-weight: 600;
+}
+
+.chef-photo {
+    border-radius: 4px 4px 4px 200px;
+    box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 1px var(--color-secondary-dark);
 }
 
 /*format*/
@@ -248,9 +276,12 @@ address {
 }
 
 .format-card {
+    height: 444px;
     border-radius: 16px;
     padding: 24px;
-    border: 1px solid lightgray; /*remuve*/
+    background-image: linear-gradient(180deg, rgba(49, 38, 26, 0.00) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%);
+    border: 1px solid lightgray;
+    /*remuve*/
 }
 
 .format-title {
@@ -284,4 +315,12 @@ address {
 
 .adress-copyright {
     font-size: 14px;
+}
+
+.footer {
+    background-color: var(--color-primary-dark);
+    background-image: url('../images/footer-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
