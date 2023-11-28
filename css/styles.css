@@ -234,6 +234,7 @@ address {
 .tradition-text .brand-uppercase {
     text-transform: uppercase;
     color: var(--color-brand-light);
+    font-weight: 600;
 }
 
 .tradition-text-limited {
@@ -243,13 +244,22 @@ address {
 /*chef*/
 
 .chefs-title {
-    max-width: 520px;
     margin: 0 auto 80px;
+    position: relative;
+}
+
+.chefs-title::before {
+    left: 0;
+}
+
+.chefs-title::after {
+    right: 0;
 }
 
 .chefs-title::before,
 .chefs-title::after {
-    display: block;
+    position: absolute;
+    bottom: 24px;
     width: 352px;
     height: 2px;
     background: var(--color-secondary-light);
@@ -375,6 +385,35 @@ address {
 /* footer */
 footer {
     padding: 32px 0;
+    background-color: var(--color-primary-dark);
+    background-image: url('../images/footer-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.footer::before,
+.footer::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.footer::before {
+    height: 120px;
+    width: 180px;
+    left: 0;
+    background-image: url('../images/decore-bread-small.png');
+}
+
+.footer::after {
+    height: 190px;
+    width: 380px;
+    right: 0;
+    background-image: url('../images/decore-bread-large.png');
 }
 
 .footer-container {
@@ -426,10 +465,35 @@ footer {
     fill: var(--color-brand-light);
 }
 
-.footer {
-    background-color: var(--color-primary-dark);
-    background-image: url('../images/footer-background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+/* modal */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal {
+    width: 800px;
+    height: 800px;
+    background-color: var(--color-primary-light);
+    border-radius: 32px;
+    position: relative;
+}
+
+.modal-btn-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
 }
