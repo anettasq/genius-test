@@ -110,22 +110,30 @@ address {
 
 .button:hover {
     color: var(--color-brand-dark);
-    background-color: transparent;
+    background-color: var(--color-primary-light);
 }
 
 /*menu*/
 .menu-link {
     color: var(--color-primary-light);
     text-decoration: none;
-    line-height: 1, 5;
+    transition: color 0.3s;
 }
 
 .menu-link:hover {
     color: var(--color-brand-light);
-    text-decoration: none;
 }
 
 /* header */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 32px;
+}
+
 .headed-container {
     display: flex;
     align-items: center;
@@ -151,7 +159,7 @@ address {
 /*hero section*/
 .hero-section {
     padding: 272px 0;
-    background-image: url('../images/hero-section-background.jpg');
+    background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.60) 58.46%, rgba(18, 18, 17, 0.00) 90.36%), url('../images/hero-section-background.jpg');
     background-repeat: no-repeat;
     background-position: top center;
     /*щоб не різало зверху*/
@@ -328,6 +336,10 @@ address {
     fill: var(--color-primary-light);
 }
 
+.carousel-button.next {
+    transform: rotate(180deg);
+}
+
 .formats-title {
     margin-bottom: 80px;
 }
@@ -349,6 +361,11 @@ address {
     background-image: linear-gradient(180deg, rgba(49, 38, 26, 0.00) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%);
     border: 1px solid lightgray;
     /*remuve*/
+    transition: transform 0.3s;
+}
+
+.format-card:hover {
+    transform: scale(1.05);
 }
 
 .format-title {
@@ -444,11 +461,11 @@ footer {
     font-size: 16px;
     font-weight: 300;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .adress-link:hover {
     color: var(--color-brand-light);
-    text-decoration: none;
 }
 
 .adress-copyright {
@@ -475,7 +492,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
 .backdrop.is-hidden {
@@ -485,8 +504,10 @@ footer {
 }
 
 .modal {
-    width: 800px;
-    height: 800px;
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    max-height: 800px;
     background-color: var(--color-primary-light);
     border-radius: 32px;
     position: relative;
