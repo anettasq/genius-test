@@ -1,90 +1,7 @@
-@font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-weight: 300;
-    src: url('../fonts/poppins-v20-latin-300.woff2') format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-weight: 400;
-    src: url('../fonts/poppins-v20-latin-regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-weight: 600;
-    src: url('../fonts/poppins-v20-latin-600.woff2') format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-weight: 900;
-    src: url('../fonts/poppins-v20-latin-900.woff2') format('woff2');
-}
-
-:root {
-    --color-brand-light: #819B57;
-    --color-brand-dark: #465929;
-    --color-primary-light: #FAF4EA;
-    --color-primary-dark: #31261A;
-    --color-secondary-light: #CFCFBC;
-    --color-secondary-dark: #A18268;
-}
-
-/*base*/
-
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-}
-
-body {
-    color: var(--color-primary-dark);
-    background-color: var(--color-primary-light);
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.5;
-    margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin-top: 0;
-}
-
-a {
-    display: inline-block;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-address {
-    font-style: normal;
-}
-
-.visually-hidden {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
+@import './utils/fonts';
+@import './utils/variables';
+@import './base';
+@import './utils/utils';
 
 .section {
     padding: 48px 0;
@@ -97,95 +14,13 @@ address {
     padding: 0 24px;
 }
 
-/*button*/
-.button {
-    padding: 16px 32px;
-    color: var(--color-primary-light);
-    background-color: var(--color-brand-light);
-    border: 2px solid var(--color-brand-light);
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-}
+@import './components/buttons';
+@import './components/links';
+@import './components/header';
+@import './components/hero-section';
 
-.button:hover {
-    color: var(--color-brand-dark);
-    background-color: var(--color-primary-light);
-}
 
-.button:disabled {
-    color: gray;
-    background-color: lightgray;
-    border-color: currentColor;
-    cursor: not-allowed;
-}
-
-/*menu*/
-.menu-link {
-    color: var(--color-primary-light);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.menu-link:hover {
-    color: var(--color-brand-light);
-}
-
-/* header */
-
-.header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 32px;
-}
-
-.headed-container {
-    display: flex;
-    align-items: center;
-    /*щоб елем не розтягувались*/
-    gap: 40px;
-}
-
-.header-nav {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    /*все вільне місце зайняте навігацією*/
-    gap: 40px;
-}
-
-.header-menu {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    gap: 64px;
-}
-
-/*hero section*/
-.hero-section {
-    padding: 272px 0;
-    background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.60) 58.46%, rgba(18, 18, 17, 0.00) 90.36%), url('../images/hero-section-background.jpg');
-    background-repeat: no-repeat;
-    background-position: top center;
-    /*щоб не різало зверху*/
-    background-size: cover;
-    /* background-attachment: fixed; */
-
-}
-
-.hero-title {
-    color: var(--color-primary-light);
-    text-align: center;
-    font-size: 128px;
-    font-weight: 900;
-    margin-bottom: 0;
-}
-
-.hero-title .accent {
-    color: var(--color-brand-light);
-}
+@import './utils/mixins';
 
 /*advantages section*/
 
@@ -358,16 +193,18 @@ address {
 }
 
 .format-item {
-    flex-basis: calc ((100% - 40px) / 3);
+    flex-basis: calc((100% - 40px) / 3);
 }
 
 .format-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     height: 444px;
     border-radius: 16px;
     padding: 24px;
     background-image: linear-gradient(180deg, rgba(49, 38, 26, 0.00) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%);
-    border: 1px solid lightgray;
-    /*remuve*/
     transition: transform 0.3s;
 }
 
@@ -375,15 +212,30 @@ address {
     transform: scale(1.05);
 }
 
+.format-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 .format-title {
     margin-bottom: 16px;
     font-size: 24;
     font-weight: 600;
+    color: var(--color-primary-light);
 }
 
 .format-text {
     font-size: 14px;
     font-weight: 300;
+    color: var(--color-primary-light);
+}
+
+.format-text p {
+    margin-bottom: 0;
 }
 
 /* contacts */
