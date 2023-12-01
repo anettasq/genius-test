@@ -5,18 +5,12 @@
     background-position: top center;
     /*щоб не різало зверху*/
     background-size: cover;
-    /* background-attachment: fixed; */
-
-}
-
-.hero-title {
-    color: var(--color-primary-light);
-    text-align: center;
-    font-size: 128px;
-    font-weight: 900;
-    margin-bottom: 0;
-}
-
-.hero-title .accent {
-    color: var(--color-brand-light);
+    
+    &__title {
+        color: var(--color-primary-light);
+        text-align: center;
+        font-size: 128px;
+        font-weight: 900;
+        margin-bottom: 0;
+    }
 }
