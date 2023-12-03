@@ -36,7 +36,7 @@
     }
 
     &__nav,
-    &__adress {
+    &__address {
         display: flex;
         flex-basis: 50%;
         gap: 20px;
@@ -50,12 +50,11 @@
 }
 
 
-.adress-list,
-.adress-info {
+.address-info {
     flex-grow: 1;
 }
 
-.adress-link {
+.address-link {
     color: var(--color-primary-light);
     font-size: 16px;
     font-weight: 300;
@@ -63,19 +62,19 @@
     transition: color 0.3s;
 }
 
-.adress-link:hover {
+.address-link:hover {
     color: var(--color-brand-light);
 }
 
-.adress-copyright {
+.address-copyright {
     font-size: 14px;
     color: var(--color-secondary-dark);
 }
 
-.adress-icon {
+.address-icon {
     fill: var(--color-primary-light);
 }
 
-.adress-icon:hover {
+.address-icon:hover {
     fill: var(--color-brand-light);
 }
