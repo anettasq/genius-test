@@ -1,23 +1,74 @@
 .contact-section {
-    padding-bottom: 96px;
+    padding: 20px 0 0 0;
+
+    @media screen and (min-width: $bp-tablet) {
+        padding-bottom: 96px;
+    }
 
     &__container {
         display: flex;
-        gap: 32px;
+        flex-direction: column;
+        gap: 24px;
+
+        @media screen and (min-width: $bp-tablet) {
+            flex-direction: row;
+            gap: 32px;
+        }
+    }
+
+    &__title,
+    &__text {
+        text-align: center;
+
+        @media screen and (min-width: $bp-tablet) {
+            text-align: left;
+            margin-bottom: 16px;
+        }
     }
 
     &__title {
-        margin-bottom: 16px;
+        margin-bottom: 8px;
+
+        @media screen and (min-width: $bp-tablet) {
+            margin-bottom: 16px;
+        }
     }
 
-    &__form-fields {
+    &__text {
         margin-bottom: 24px;
+
+        @media screen and (min-width: $bp-tablet) {
+            margin-bottom: 42px;
+        }
+    }
+
+    &__form-field {
+        margin-bottom: 16px;
+
+        @media screen and (min-width: $bp-tablet) {
+            margin-bottom: 24px;
+        }
     }
 
     &__map {
         flex-shrink: 0;
-        border: none;
-        border-radius: 16px;
+        width: auto;
+        height: 176px;
+        margin: 0 -24px;
+
+
+        @media screen and (min-width: $bp-tablet) {
+            margin: auto;
+            width: 320px;
+            height: 500px;
+            border: none;
+            border-radius: 16px;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+            width: 600px;
+            height: 595px;
+        }
     }
 
     &__button {
