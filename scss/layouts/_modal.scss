@@ -29,10 +29,39 @@
     position: relative;
     overflow-y: auto;
 
+    &::after {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 180px;
+        height: 240px;
+        background-image: url('../../images/mobile-decor-bread-and-circle.png');
+        content: '';
+    }
+
     &__btn-close {
         position: absolute;
         top: 40px;
         right: 40px;
+        padding: 0;
+        fill: transparent;
+        stroke: var(--color-primary-dark);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__title {
+        font-size: 54px;
+        font-weight: 900;
+        margin-bottom: 8px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    &__text {
+        text-align: center;
+        margin-bottom: 72px;
     }
 
     &__form-field {
